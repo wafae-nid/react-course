@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+       const para= <p> paragraph element </p>// this is not html this is a jsx and it is a shortcut for making a dom so this is actually an object
+        // now normal componant cant have move than 1 elemnt and render cant get more than 1 element so there is div ... its the element that can have many inside  
+        //so we use it 
+        const div = <div>
+                <p> im paragraph inside div</p>
+                <button> im button inside div</button>
+            </div>
+
+        //this is best practice for organisation is to write it like this 
+        const div2 = (
+            <div>
+                <p> im paragraph inside div</p>
+                <button> im button inside div</button>
+            </div>
+        );
+        const div3=(
+            <div>
+                <p> im paragraph inside div {8+6}</p> 
+                <button> im button inside div</button> 
+            </div>
+        );
+        // u can insert javascript into html
+        const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(div3)
+    </script>
+  </body>
+</html>

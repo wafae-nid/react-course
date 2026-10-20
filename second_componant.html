@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>chatbot</title>
+    <link rel="stylesheet" href= "style.css">
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        
+        function ChatBotton()
+        {
+            return(
+                <>
+                    <input id="style2" placeholder=" enter your chat here" size="30"/> 
+                    <button id="style">send</button>
+                </>
+            )
+        };
+
+        function Message(props)
+        {
+            const message_ = props.message;
+            const sender = props.sender;
+            if(sender=== "robot")
+            {
+                return(
+                    <div id="messagebot">
+                        <span id="message">
+                        {message_};
+                        </span>
+                        <img src="img.jpeg" width="20" height="20" id="style5"/>
+                    </div>
+                ) 
+            }
+            else if(sender  ==="human")
+            {
+                return(
+                    <div id="messagehuman">
+                        <img src="img2.jpeg" width="20" height="20" id="style5"/>
+                        <span id="message">
+                        {message_};
+                        </span>
+                    </div>
+                ) 
+            }
+        }
+
+        const div=(
+            <div id="chat-container">
+                <ChatBotton/>
+                <Message message ="hello robot" sender="human"/>
+                <Message  message ="hi human" sender="robot"/>
+
+            </div>
+        );
+        //props is the object we use to asses our attributes we give our message componant
+        const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(div)
+    </script>
+  </body>
+</html>

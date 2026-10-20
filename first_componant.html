@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>chatbot</title>
+    <link rel="stylesheet" href= "style.css">
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        
+        function ChatBotton()
+        {
+            return(
+                <div>
+                    <input id="style2" placeholder=" enter your chat here" size="30"/> 
+                    <button id="style">send</button>
+                </div>
+            )
+        };
+        // const div =(
+        //     <div>
+        //         {ChatBotton()} 
+        //     </div>
+        // );
+        // now this is the first way is to use the brackets but there is an other syntax
+
+         const div =(
+            <div>
+                <ChatBotton></ChatBotton> 
+            </div>
+        );
+        // now this all good but it inserts a div element into our website thats why we can use fragment instead
+        function ChatBotton2()
+        {
+            return(
+                <>
+                    <input id="style2" placeholder=" enter your chat here"/> 
+                    <button id="style">send</button>
+                </>
+            )
+        };
+        const div2=(
+            <>
+                <ChatBotton2/>
+            </>
+        );
+        const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(div2)
+    </script>
+  </body>
+</html>
